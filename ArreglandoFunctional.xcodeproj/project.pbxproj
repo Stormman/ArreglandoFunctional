@@ -14,6 +14,15 @@
 		C808E5F91FA09CE400ECE8C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C808E5F71FA09CE400ECE8C8 /* LaunchScreen.storyboard */; };
 		C808E6041FA09CE500ECE8C8 /* ArreglandoFunctionalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C808E6031FA09CE500ECE8C8 /* ArreglandoFunctionalTests.swift */; };
 		C808E60F1FA09CE500ECE8C8 /* ArreglandoFunctionalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C808E60E1FA09CE500ECE8C8 /* ArreglandoFunctionalUITests.swift */; };
+		C808E6201FA09D3A00ECE8C8 /* Kinds.swift in Sources */ = {isa = PBXBuildFile; fileRef = C808E61E1FA09D3A00ECE8C8 /* Kinds.swift */; };
+		C808E6211FA09D3A00ECE8C8 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = C808E61F1FA09D3A00ECE8C8 /* Operators.swift */; };
+		C808E6241FA09E3700ECE8C8 /* Applicative.swift in Sources */ = {isa = PBXBuildFile; fileRef = C808E6231FA09E3700ECE8C8 /* Applicative.swift */; };
+		C808E62D1FA09EB900ECE8C8 /* Contravariant.swift in Sources */ = {isa = PBXBuildFile; fileRef = C808E62B1FA09EB900ECE8C8 /* Contravariant.swift */; };
+		C808E62E1FA09EB900ECE8C8 /* Functor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C808E62C1FA09EB900ECE8C8 /* Functor.swift */; };
+		C808E6321FA09F1500ECE8C8 /* Pointed.swift in Sources */ = {isa = PBXBuildFile; fileRef = C808E6301FA09F1500ECE8C8 /* Pointed.swift */; };
+		C808E6331FA09F1500ECE8C8 /* Copointed.swift in Sources */ = {isa = PBXBuildFile; fileRef = C808E6311FA09F1500ECE8C8 /* Copointed.swift */; };
+		C808E6351FA09F8800ECE8C8 /* Maybe.swift in Sources */ = {isa = PBXBuildFile; fileRef = C808E6341FA09F8800ECE8C8 /* Maybe.swift */; };
+		C808E6381FA0A3EC00ECE8C8 /* IO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C808E6371FA0A3EC00ECE8C8 /* IO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +56,16 @@
 		C808E60A1FA09CE500ECE8C8 /* ArreglandoFunctionalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArreglandoFunctionalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C808E60E1FA09CE500ECE8C8 /* ArreglandoFunctionalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArreglandoFunctionalUITests.swift; sourceTree = "<group>"; };
 		C808E6101FA09CE500ECE8C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C808E61D1FA09D3900ECE8C8 /* Basis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Basis.h; sourceTree = "<group>"; };
+		C808E61E1FA09D3A00ECE8C8 /* Kinds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kinds.swift; sourceTree = "<group>"; };
+		C808E61F1FA09D3A00ECE8C8 /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
+		C808E6231FA09E3700ECE8C8 /* Applicative.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Applicative.swift; sourceTree = "<group>"; };
+		C808E62B1FA09EB900ECE8C8 /* Contravariant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contravariant.swift; sourceTree = "<group>"; };
+		C808E62C1FA09EB900ECE8C8 /* Functor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functor.swift; sourceTree = "<group>"; };
+		C808E6301FA09F1500ECE8C8 /* Pointed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pointed.swift; sourceTree = "<group>"; };
+		C808E6311FA09F1500ECE8C8 /* Copointed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Copointed.swift; sourceTree = "<group>"; };
+		C808E6341FA09F8800ECE8C8 /* Maybe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Maybe.swift; sourceTree = "<group>"; };
+		C808E6371FA0A3EC00ECE8C8 /* IO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +116,7 @@
 		C808E5ED1FA09CE400ECE8C8 /* ArreglandoFunctional */ = {
 			isa = PBXGroup;
 			children = (
+				C808E61C1FA09D2000ECE8C8 /* Basis */,
 				C808E5EE1FA09CE400ECE8C8 /* AppDelegate.swift */,
 				C808E5F01FA09CE400ECE8C8 /* ViewController.swift */,
 				C808E5F21FA09CE400ECE8C8 /* Main.storyboard */,
@@ -123,6 +143,63 @@
 				C808E6101FA09CE500ECE8C8 /* Info.plist */,
 			);
 			path = ArreglandoFunctionalUITests;
+			sourceTree = "<group>";
+		};
+		C808E61C1FA09D2000ECE8C8 /* Basis */ = {
+			isa = PBXGroup;
+			children = (
+				C808E6361FA0A3DF00ECE8C8 /* System */,
+				C808E6251FA09E6200ECE8C8 /* Data */,
+				C808E6221FA09E1B00ECE8C8 /* Control */,
+				C808E61D1FA09D3900ECE8C8 /* Basis.h */,
+				C808E61E1FA09D3A00ECE8C8 /* Kinds.swift */,
+				C808E61F1FA09D3A00ECE8C8 /* Operators.swift */,
+			);
+			path = Basis;
+			sourceTree = "<group>";
+		};
+		C808E6221FA09E1B00ECE8C8 /* Control */ = {
+			isa = PBXGroup;
+			children = (
+				C808E6231FA09E3700ECE8C8 /* Applicative.swift */,
+			);
+			path = Control;
+			sourceTree = "<group>";
+		};
+		C808E6251FA09E6200ECE8C8 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				C808E6341FA09F8800ECE8C8 /* Maybe.swift */,
+				C808E62F1FA09EF400ECE8C8 /* Pointed */,
+				C808E62A1FA09EA600ECE8C8 /* functor */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		C808E62A1FA09EA600ECE8C8 /* functor */ = {
+			isa = PBXGroup;
+			children = (
+				C808E62B1FA09EB900ECE8C8 /* Contravariant.swift */,
+				C808E62C1FA09EB900ECE8C8 /* Functor.swift */,
+			);
+			path = functor;
+			sourceTree = "<group>";
+		};
+		C808E62F1FA09EF400ECE8C8 /* Pointed */ = {
+			isa = PBXGroup;
+			children = (
+				C808E6311FA09F1500ECE8C8 /* Copointed.swift */,
+				C808E6301FA09F1500ECE8C8 /* Pointed.swift */,
+			);
+			path = Pointed;
+			sourceTree = "<group>";
+		};
+		C808E6361FA0A3DF00ECE8C8 /* System */ = {
+			isa = PBXGroup;
+			children = (
+				C808E6371FA0A3EC00ECE8C8 /* IO.swift */,
+			);
+			path = System;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +336,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C808E62D1FA09EB900ECE8C8 /* Contravariant.swift in Sources */,
+				C808E6381FA0A3EC00ECE8C8 /* IO.swift in Sources */,
 				C808E5F11FA09CE400ECE8C8 /* ViewController.swift in Sources */,
+				C808E6351FA09F8800ECE8C8 /* Maybe.swift in Sources */,
+				C808E6211FA09D3A00ECE8C8 /* Operators.swift in Sources */,
+				C808E6331FA09F1500ECE8C8 /* Copointed.swift in Sources */,
+				C808E6321FA09F1500ECE8C8 /* Pointed.swift in Sources */,
 				C808E5EF1FA09CE400ECE8C8 /* AppDelegate.swift in Sources */,
+				C808E6201FA09D3A00ECE8C8 /* Kinds.swift in Sources */,
+				C808E62E1FA09EB900ECE8C8 /* Functor.swift in Sources */,
+				C808E6241FA09E3700ECE8C8 /* Applicative.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
