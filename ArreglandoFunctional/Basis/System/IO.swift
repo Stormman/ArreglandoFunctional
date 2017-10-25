@@ -111,13 +111,19 @@ public func interact(f : (String) -> String) -> IO<Void> {
 	}
 }
 */
+protocol Functor__ {}
+protocol Applicative__ {}
+protocol ApplicativeOps__{}
+protocol Monad__{}
+protocol MonadOps__{}
+protocol Pointed__{}
+protocol MonadFix__{}
 
+extension IO : Functor__ {
+	
+	
 
-extension IO : Functor {
-	typealias B = Any
-	typealias FB = IO<B>
-
-    public static func fmap<B>(f: A -> B) -> (IO<A>) -> IO<B> {
+    public static func fmap<B>(_ f: @escaping (A)  -> B) -> (IO<A>) -> IO<B> {
 		return { io in
 			return IO<B>({ rw in
 				let (nw, a) = io.apply(rw)
@@ -127,22 +133,22 @@ extension IO : Functor {
 	}
 }
 
-public func <%><A, B>(f: A -> B, io : IO<A>) -> IO<B> {
-	return IO.fmap(f)(io)
+public func <%><A, B>(f: @escaping (A) -> B, io : IO<A>) -> IO<B> {
+    return IO.fmap( f)(io)
 }
 
-public func <% <A, B>(x : A, io : IO<B>) -> IO<A> {
+public func <% <A, B>(_ x : A, io : IO<B>) -> IO<A> {
 	return IO.fmap(const(x))(io)
 }
 
-extension IO : Pointed {
-	public static func pure(a: A) -> IO<A> {
+extension IO : Pointed__ {
+	public static func pure(_ a: A) -> IO<A> {
 		return IO<A>({ rw in (rw, a) })
 	}
 }
 
-extension IO : Applicative { 
-	public static func ap<B>(fn: IO<A -> B>) -> IO<A> -> IO<B> {
+extension IO : Applicative__ {
+    public static func ap<B>(_ fn: IO<(A) -> B>) -> (IO<A>) -> IO<B> {
 		return { m in return IO<B>({ rw in
 			let f = fn.unsafePerformIO()
 			let (nw, x) = m.apply(rw)
@@ -151,8 +157,8 @@ extension IO : Applicative {
 	}
 }
 
-public func <*><A, B>(fn: IO<A -> B>, m: IO<A>) -> IO<B> {
-	return IO<A>.ap(fn)(m)
+public func <*><A, B>(fn: IO<(A) -> B>, m: IO<A>) -> IO<B> {
+    return IO<A>.ap( fn)(m)
 }
 
 public func *> <A, B>(a : IO<A>, b : IO<B>) -> IO<B> {
@@ -163,27 +169,29 @@ public func <* <A, B>(a : IO<A>, b : IO<B>) -> IO<A> {
 	return const <%> a <*> b
 }
 
-extension IO : ApplicativeOps {
+
+
+extension IO : ApplicativeOps__ {
     public typealias C = Any
 	typealias FC = IO<C>
     public typealias D = Any
 	typealias FD = IO<D>
 
-    public static func liftA<B>(f : (A) -> B) -> (IO<A>) -> IO<B> {
-		return { a in IO<A -> B>.pure(f) <*> a }
+    public static func liftA<B>(f : @escaping (A) -> B) -> (IO<A>) -> IO<B> {
+        return { a in IO<(A) -> B>.pure(f) <*> a }
 	}
 
-    public static func liftA2<B, C>(f : (A) -> (B) -> C) -> IO<A> -> IO<B> -> IO<C> {
+    public static func liftA2<B, C>(f : @escaping (A) -> (B) -> C) -> (IO<A>) -> (IO<B>) -> IO<C> {
 		return { a in { b in f <%> a <*> b  } }
 	}
 
-	public static func liftA3<B, C, D>(f : A -> B -> C -> D) -> IO<A> -> IO<B> -> IO<C> -> IO<D> {
+    public static func liftA3<B, C, D>(f : @escaping (A) -> (B) -> (C) -> D) -> (IO<A>) -> (IO<B>) -> (IO<C>) -> (IO<D>) {
 		return { a in { b in { c in f <%> a <*> b <*> c } } }
 	}
 }
 
-extension IO : Monad {
-	public func bind<B>(f: A -> IO<B>) -> IO<B> {
+extension IO : Monad__  {
+    public func bind<B>(_ f: @escaping( A) -> IO<B>) -> IO<B> {
 		return IO<B>({ rw in
 			let (nw, a) = self.apply(rw)
 			return f(a).apply(nw)
@@ -191,7 +199,7 @@ extension IO : Monad {
 	}
 }
 
-public func >>-<A, B>(x: IO<A>, f: A -> IO<B>) -> IO<B> {
+public func >>-<A, B>(x: IO<A>, f: @escaping (A) -> IO<B>) -> IO<B> {
 	return x.bind(f)
 }
 
@@ -201,12 +209,14 @@ public func >><A, B>(x: IO<A>, y: IO<B>) -> IO<B> {
 	})
 }
 
-extension IO : MonadOps {
+extension IO : MonadOps__ {
 	typealias MLA = IO<[A]>
-	typealias MLB = IO<[B]>
+	//typealias MLB = IO<[B]>
 	typealias MU = IO<()>
+    
+   /*
 
-	public static func mapM<B>(f : A -> IO<B>) -> [A] -> IO<[B]> {
+    public static func mapM<B>(f : (A) -> IO<B>) -> ([A]) -> IO<[B]> {
 		return { xs in IO<B>.sequence(map(f)(xs)) }
 	}
 
@@ -223,29 +233,30 @@ extension IO : MonadOps {
 	}
 
 	public static func sequence(ls : [IO<A>]) -> IO<[A]> {
-		return foldr({ m, m2 in m >>- { x in m2 >>- { xs in IO<[A]>.pure(cons(x)(xs)) } } })(IO<[A]>.pure([]))(ls)
+		return foldr({ m, m2 in m >>- { x in m2 >>- { xs in IO<[A]>.pure(Cons(x)(xs)) } } })(IO<[A]>.pure([]))(ls)
 	}
 
 	public static func sequence_(ls : [IO<A>]) -> IO<()> {
 		return foldr(>>)(IO<()>.pure(()))(ls)
 	}
+ */
 }
 
-public func -<<<A, B>(f : A -> IO<B>, xs : IO<A>) -> IO<B> {
+public func -<<<A, B>(f :@escaping (A)  -> IO<B>, xs : IO<A>) -> IO<B> {
 	return xs.bind(f)
 }
 
-public func >-><A, B, C>(f : A -> IO<B>, g : B -> IO<C>) -> A -> IO<C> {
+public func >-><A, B, C>(f : @escaping (A) -> IO<B>, g : @escaping (B) -> IO<C>) -> (A) -> IO<C> {
 	return { x in f(x) >>- g }
 }
 
-public func <-<<A, B, C>(g : B -> IO<C>, f : A -> IO<B>) -> A -> IO<C> {
+public func <-<<A, B, C>(g :@escaping  (B) -> IO<C>, f :@escaping  (A) -> IO<B>) -> (A) -> IO<C> {
 	return { x in f(x) >>- g }
 }
 
-extension IO : MonadFix {
-	public static func mfix(f : A -> IO<A>) -> IO<A> {
-		return f(IO.mfix(f).unsafePerformIO())
+extension IO : MonadFix__ {
+    public static func mfix(f : (A) -> IO<A>) -> IO<A> {
+        return f(IO.mfix(f: f).unsafePerformIO())
 	}
 }
 
