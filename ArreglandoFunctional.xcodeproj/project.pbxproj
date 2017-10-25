@@ -27,6 +27,20 @@
 		C808E63C1FA0CE1F00ECE8C8 /* Tuple.swift in Sources */ = {isa = PBXBuildFile; fileRef = C808E63B1FA0CE1F00ECE8C8 /* Tuple.swift */; };
 		C808E63E1FA0D03400ECE8C8 /* Combinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C808E63D1FA0D03400ECE8C8 /* Combinator.swift */; };
 		C808E6401FA0DDA700ECE8C8 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = C808E63F1FA0DDA700ECE8C8 /* Member.swift */; };
+		C808E6451FA0DE4B00ECE8C8 /* MonadFix.swift in Sources */ = {isa = PBXBuildFile; fileRef = C808E6421FA0DE4A00ECE8C8 /* MonadFix.swift */; };
+		C808E6461FA0DE4B00ECE8C8 /* MonadZip.swift in Sources */ = {isa = PBXBuildFile; fileRef = C808E6431FA0DE4A00ECE8C8 /* MonadZip.swift */; };
+		C808E6471FA0DE4B00ECE8C8 /* Monad.swift in Sources */ = {isa = PBXBuildFile; fileRef = C808E6441FA0DE4B00ECE8C8 /* Monad.swift */; };
+		C808E64C1FA0DEED00ECE8C8 /* Comonad.swift in Sources */ = {isa = PBXBuildFile; fileRef = C808E6491FA0DEEC00ECE8C8 /* Comonad.swift */; };
+		C808E64D1FA0DEED00ECE8C8 /* ComonadApply.swift in Sources */ = {isa = PBXBuildFile; fileRef = C808E64A1FA0DEEC00ECE8C8 /* ComonadApply.swift */; };
+		C808E64E1FA0DEED00ECE8C8 /* ComonadFix.swift in Sources */ = {isa = PBXBuildFile; fileRef = C808E64B1FA0DEEC00ECE8C8 /* ComonadFix.swift */; };
+		C808E6501FA0DF1200ECE8C8 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = C808E64F1FA0DF1200ECE8C8 /* Category.swift */; };
+		C808E6551FA0DF3400ECE8C8 /* Arrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C808E6521FA0DF3300ECE8C8 /* Arrow.swift */; };
+		C808E6561FA0DF3400ECE8C8 /* Lift.swift in Sources */ = {isa = PBXBuildFile; fileRef = C808E6531FA0DF3400ECE8C8 /* Lift.swift */; };
+		C808E6571FA0DF3400ECE8C8 /* Lower.swift in Sources */ = {isa = PBXBuildFile; fileRef = C808E6541FA0DF3400ECE8C8 /* Lower.swift */; };
+		C808E65A1FA0DF7C00ECE8C8 /* Function.swift in Sources */ = {isa = PBXBuildFile; fileRef = C808E6581FA0DF7B00ECE8C8 /* Function.swift */; };
+		C808E65B1FA0DF7C00ECE8C8 /* Either.swift in Sources */ = {isa = PBXBuildFile; fileRef = C808E6591FA0DF7C00ECE8C8 /* Either.swift */; };
+		C808E65D1FA0E02000ECE8C8 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = C808E65C1FA0E02000ECE8C8 /* Box.swift */; };
+		C808E65F1FA0E3A400ECE8C8 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = C808E65E1FA0E3A400ECE8C8 /* Error.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +88,20 @@
 		C808E63B1FA0CE1F00ECE8C8 /* Tuple.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tuple.swift; sourceTree = "<group>"; };
 		C808E63D1FA0D03400ECE8C8 /* Combinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Combinator.swift; sourceTree = "<group>"; };
 		C808E63F1FA0DDA700ECE8C8 /* Member.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
+		C808E6421FA0DE4A00ECE8C8 /* MonadFix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonadFix.swift; sourceTree = "<group>"; };
+		C808E6431FA0DE4A00ECE8C8 /* MonadZip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonadZip.swift; sourceTree = "<group>"; };
+		C808E6441FA0DE4B00ECE8C8 /* Monad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Monad.swift; sourceTree = "<group>"; };
+		C808E6491FA0DEEC00ECE8C8 /* Comonad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comonad.swift; sourceTree = "<group>"; };
+		C808E64A1FA0DEEC00ECE8C8 /* ComonadApply.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComonadApply.swift; sourceTree = "<group>"; };
+		C808E64B1FA0DEEC00ECE8C8 /* ComonadFix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComonadFix.swift; sourceTree = "<group>"; };
+		C808E64F1FA0DF1200ECE8C8 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		C808E6521FA0DF3300ECE8C8 /* Arrow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Arrow.swift; sourceTree = "<group>"; };
+		C808E6531FA0DF3400ECE8C8 /* Lift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lift.swift; sourceTree = "<group>"; };
+		C808E6541FA0DF3400ECE8C8 /* Lower.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lower.swift; sourceTree = "<group>"; };
+		C808E6581FA0DF7B00ECE8C8 /* Function.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Function.swift; sourceTree = "<group>"; };
+		C808E6591FA0DF7C00ECE8C8 /* Either.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Either.swift; sourceTree = "<group>"; };
+		C808E65C1FA0E02000ECE8C8 /* Box.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
+		C808E65E1FA0E3A400ECE8C8 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +197,9 @@
 		C808E6221FA09E1B00ECE8C8 /* Control */ = {
 			isa = PBXGroup;
 			children = (
+				C808E6511FA0DF2400ECE8C8 /* Arrow */,
+				C808E64F1FA0DF1200ECE8C8 /* Category.swift */,
+				C808E6481FA0DEDF00ECE8C8 /* CoMonad */,
 				C808E6411FA0DE0500ECE8C8 /* Monad */,
 				C808E6231FA09E3700ECE8C8 /* Applicative.swift */,
 			);
@@ -178,6 +209,9 @@
 		C808E6251FA09E6200ECE8C8 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				C808E6591FA0DF7C00ECE8C8 /* Either.swift */,
+				C808E65C1FA0E02000ECE8C8 /* Box.swift */,
+				C808E6581FA0DF7B00ECE8C8 /* Function.swift */,
 				C808E63D1FA0D03400ECE8C8 /* Combinator.swift */,
 				C808E63B1FA0CE1F00ECE8C8 /* Tuple.swift */,
 				C808E6391FA0CDC500ECE8C8 /* Const.swift */,
@@ -210,6 +244,7 @@
 		C808E6361FA0A3DF00ECE8C8 /* System */ = {
 			isa = PBXGroup;
 			children = (
+				C808E65E1FA0E3A400ECE8C8 /* Error.swift */,
 				C808E6371FA0A3EC00ECE8C8 /* IO.swift */,
 			);
 			path = System;
@@ -218,8 +253,31 @@
 		C808E6411FA0DE0500ECE8C8 /* Monad */ = {
 			isa = PBXGroup;
 			children = (
+				C808E6441FA0DE4B00ECE8C8 /* Monad.swift */,
+				C808E6421FA0DE4A00ECE8C8 /* MonadFix.swift */,
+				C808E6431FA0DE4A00ECE8C8 /* MonadZip.swift */,
 			);
 			path = Monad;
+			sourceTree = "<group>";
+		};
+		C808E6481FA0DEDF00ECE8C8 /* CoMonad */ = {
+			isa = PBXGroup;
+			children = (
+				C808E6491FA0DEEC00ECE8C8 /* Comonad.swift */,
+				C808E64A1FA0DEEC00ECE8C8 /* ComonadApply.swift */,
+				C808E64B1FA0DEEC00ECE8C8 /* ComonadFix.swift */,
+			);
+			path = CoMonad;
+			sourceTree = "<group>";
+		};
+		C808E6511FA0DF2400ECE8C8 /* Arrow */ = {
+			isa = PBXGroup;
+			children = (
+				C808E6521FA0DF3300ECE8C8 /* Arrow.swift */,
+				C808E6531FA0DF3400ECE8C8 /* Lift.swift */,
+				C808E6541FA0DF3400ECE8C8 /* Lower.swift */,
+			);
+			path = Arrow;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -357,6 +415,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C808E62D1FA09EB900ECE8C8 /* Contravariant.swift in Sources */,
+				C808E65D1FA0E02000ECE8C8 /* Box.swift in Sources */,
+				C808E6471FA0DE4B00ECE8C8 /* Monad.swift in Sources */,
 				C808E6381FA0A3EC00ECE8C8 /* IO.swift in Sources */,
 				C808E5F11FA09CE400ECE8C8 /* ViewController.swift in Sources */,
 				C808E6351FA09F8800ECE8C8 /* Maybe.swift in Sources */,
@@ -365,12 +425,24 @@
 				C808E63A1FA0CDC600ECE8C8 /* Const.swift in Sources */,
 				C808E6331FA09F1500ECE8C8 /* Copointed.swift in Sources */,
 				C808E63E1FA0D03400ECE8C8 /* Combinator.swift in Sources */,
+				C808E6551FA0DF3400ECE8C8 /* Arrow.swift in Sources */,
+				C808E6461FA0DE4B00ECE8C8 /* MonadZip.swift in Sources */,
+				C808E6571FA0DF3400ECE8C8 /* Lower.swift in Sources */,
+				C808E6561FA0DF3400ECE8C8 /* Lift.swift in Sources */,
+				C808E64C1FA0DEED00ECE8C8 /* Comonad.swift in Sources */,
+				C808E65A1FA0DF7C00ECE8C8 /* Function.swift in Sources */,
+				C808E65B1FA0DF7C00ECE8C8 /* Either.swift in Sources */,
+				C808E64D1FA0DEED00ECE8C8 /* ComonadApply.swift in Sources */,
 				C808E63C1FA0CE1F00ECE8C8 /* Tuple.swift in Sources */,
 				C808E6321FA09F1500ECE8C8 /* Pointed.swift in Sources */,
+				C808E65F1FA0E3A400ECE8C8 /* Error.swift in Sources */,
 				C808E5EF1FA09CE400ECE8C8 /* AppDelegate.swift in Sources */,
+				C808E64E1FA0DEED00ECE8C8 /* ComonadFix.swift in Sources */,
 				C808E6201FA09D3A00ECE8C8 /* Kinds.swift in Sources */,
 				C808E62E1FA09EB900ECE8C8 /* Functor.swift in Sources */,
 				C808E6241FA09E3700ECE8C8 /* Applicative.swift in Sources */,
+				C808E6451FA0DE4B00ECE8C8 /* MonadFix.swift in Sources */,
+				C808E6501FA0DF1200ECE8C8 /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
