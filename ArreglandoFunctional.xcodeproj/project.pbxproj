@@ -26,6 +26,7 @@
 		C808E63A1FA0CDC600ECE8C8 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = C808E6391FA0CDC500ECE8C8 /* Const.swift */; };
 		C808E63C1FA0CE1F00ECE8C8 /* Tuple.swift in Sources */ = {isa = PBXBuildFile; fileRef = C808E63B1FA0CE1F00ECE8C8 /* Tuple.swift */; };
 		C808E63E1FA0D03400ECE8C8 /* Combinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C808E63D1FA0D03400ECE8C8 /* Combinator.swift */; };
+		C808E6401FA0DDA700ECE8C8 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = C808E63F1FA0DDA700ECE8C8 /* Member.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		C808E6391FA0CDC500ECE8C8 /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		C808E63B1FA0CE1F00ECE8C8 /* Tuple.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tuple.swift; sourceTree = "<group>"; };
 		C808E63D1FA0D03400ECE8C8 /* Combinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Combinator.swift; sourceTree = "<group>"; };
+		C808E63F1FA0DDA700ECE8C8 /* Member.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +169,7 @@
 		C808E6221FA09E1B00ECE8C8 /* Control */ = {
 			isa = PBXGroup;
 			children = (
+				C808E6411FA0DE0500ECE8C8 /* Monad */,
 				C808E6231FA09E3700ECE8C8 /* Applicative.swift */,
 			);
 			path = Control;
@@ -178,6 +181,7 @@
 				C808E63D1FA0D03400ECE8C8 /* Combinator.swift */,
 				C808E63B1FA0CE1F00ECE8C8 /* Tuple.swift */,
 				C808E6391FA0CDC500ECE8C8 /* Const.swift */,
+				C808E63F1FA0DDA700ECE8C8 /* Member.swift */,
 				C808E6341FA09F8800ECE8C8 /* Maybe.swift */,
 				C808E62F1FA09EF400ECE8C8 /* Pointed */,
 				C808E62A1FA09EA600ECE8C8 /* functor */,
@@ -209,6 +213,13 @@
 				C808E6371FA0A3EC00ECE8C8 /* IO.swift */,
 			);
 			path = System;
+			sourceTree = "<group>";
+		};
+		C808E6411FA0DE0500ECE8C8 /* Monad */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Monad;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -349,6 +360,7 @@
 				C808E6381FA0A3EC00ECE8C8 /* IO.swift in Sources */,
 				C808E5F11FA09CE400ECE8C8 /* ViewController.swift in Sources */,
 				C808E6351FA09F8800ECE8C8 /* Maybe.swift in Sources */,
+				C808E6401FA0DDA700ECE8C8 /* Member.swift in Sources */,
 				C808E6211FA09D3A00ECE8C8 /* Operators.swift in Sources */,
 				C808E63A1FA0CDC600ECE8C8 /* Const.swift in Sources */,
 				C808E6331FA09F1500ECE8C8 /* Copointed.swift in Sources */,
