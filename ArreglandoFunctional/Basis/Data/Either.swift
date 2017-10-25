@@ -58,6 +58,8 @@ public struct Either<L, R>  {
 			return .Right(Box(r))
 		}
         //return error(x: "Cannot match an Either with neither a left or right value.")
+        
+        return error("error")
 	}
 }
 
