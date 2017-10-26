@@ -46,6 +46,7 @@
 		C808E6661FA126FF00ECE8C8 /* Folds.swift in Sources */ = {isa = PBXBuildFile; fileRef = C808E6651FA126FF00ECE8C8 /* Folds.swift */; };
 		C808E6681FA19D8000ECE8C8 /* Sublists.swift in Sources */ = {isa = PBXBuildFile; fileRef = C808E6671FA19D8000ECE8C8 /* Sublists.swift */; };
 		C808E66A1FA1A02000ECE8C8 /* Compare.swift in Sources */ = {isa = PBXBuildFile; fileRef = C808E6691FA1A02000ECE8C8 /* Compare.swift */; };
+		C808E66C1FA1AF9600ECE8C8 /* Transformations.swift in Sources */ = {isa = PBXBuildFile; fileRef = C808E66B1FA1AF9600ECE8C8 /* Transformations.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +113,7 @@
 		C808E6651FA126FF00ECE8C8 /* Folds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Folds.swift; sourceTree = "<group>"; };
 		C808E6671FA19D8000ECE8C8 /* Sublists.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sublists.swift; sourceTree = "<group>"; };
 		C808E6691FA1A02000ECE8C8 /* Compare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Compare.swift; sourceTree = "<group>"; };
+		C808E66B1FA1AF9600ECE8C8 /* Transformations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transformations.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -294,6 +296,7 @@
 		C808E6601FA1194500ECE8C8 /* List */ = {
 			isa = PBXGroup;
 			children = (
+				C808E66B1FA1AF9600ECE8C8 /* Transformations.swift */,
 				C808E6691FA1A02000ECE8C8 /* Compare.swift */,
 				C808E6671FA19D8000ECE8C8 /* Sublists.swift */,
 				C808E6651FA126FF00ECE8C8 /* Folds.swift */,
@@ -456,6 +459,7 @@
 				C808E65A1FA0DF7C00ECE8C8 /* Function.swift in Sources */,
 				C808E65B1FA0DF7C00ECE8C8 /* Either.swift in Sources */,
 				C808E64D1FA0DEED00ECE8C8 /* ComonadApply.swift in Sources */,
+				C808E66C1FA1AF9600ECE8C8 /* Transformations.swift in Sources */,
 				C808E63C1FA0CE1F00ECE8C8 /* Tuple.swift in Sources */,
 				C808E6321FA09F1500ECE8C8 /* Pointed.swift in Sources */,
 				C808E65F1FA0E3A400ECE8C8 /* Error.swift in Sources */,
