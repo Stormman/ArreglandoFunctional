@@ -160,12 +160,12 @@ public func on<A, B, C>(o : (B) -> B -> C) -> (A -> B) -> A -> A -> C {
 public func on<A, B, C>(o : (B, B) -> C) -> (A -> B) -> A -> A -> C {
 	return { f in { x in { y in o(f(x), f(y)) } } }
 }
-
+*/
 /// Returns a function with the position of the arguments switched.
-public func flip<A, B, C>(f : A -> B -> C) -> B -> A -> C {
+public func flip<A, B, C>(_ f : @escaping(A)  -> (B) -> C) -> (B) -> (A) -> C {
 	return { b in { a in f(a)(b) } }
 }
-
+/*
 /// Returns an uncurried function with the position of the arguments in the tuple switched.
 public func flip<A, B, C>(f : (A, B) -> C) -> (B, A) -> C {
 	return { t in f(snd(t), fst(t)) }
