@@ -48,6 +48,10 @@
 		C808E66A1FA1A02000ECE8C8 /* Compare.swift in Sources */ = {isa = PBXBuildFile; fileRef = C808E6691FA1A02000ECE8C8 /* Compare.swift */; };
 		C808E66C1FA1AF9600ECE8C8 /* Transformations.swift in Sources */ = {isa = PBXBuildFile; fileRef = C808E66B1FA1AF9600ECE8C8 /* Transformations.swift */; };
 		C8D36C921FA1ECFA0077C94B /* Stream.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D36C911FA1ECF90077C94B /* Stream.swift */; };
+		C8D36C941FA1F7EB0077C94B /* Coerce.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D36C931FA1F7EB0077C94B /* Coerce.swift */; };
+		C8D36C961FA1F8FB0077C94B /* IORef.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D36C951FA1F8FB0077C94B /* IORef.swift */; };
+		C8D36C981FA1F9A60077C94B /* STRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D36C971FA1F9A60077C94B /* STRef.swift */; };
+		C8D36C9A1FA1F9BE0077C94B /* ST.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D36C991FA1F9BE0077C94B /* ST.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +120,10 @@
 		C808E6691FA1A02000ECE8C8 /* Compare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Compare.swift; sourceTree = "<group>"; };
 		C808E66B1FA1AF9600ECE8C8 /* Transformations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transformations.swift; sourceTree = "<group>"; };
 		C8D36C911FA1ECF90077C94B /* Stream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stream.swift; sourceTree = "<group>"; };
+		C8D36C931FA1F7EB0077C94B /* Coerce.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coerce.swift; sourceTree = "<group>"; };
+		C8D36C951FA1F8FB0077C94B /* IORef.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IORef.swift; sourceTree = "<group>"; };
+		C8D36C971FA1F9A60077C94B /* STRef.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STRef.swift; sourceTree = "<group>"; };
+		C8D36C991FA1F9BE0077C94B /* ST.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ST.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +231,10 @@
 		C808E6251FA09E6200ECE8C8 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				C8D36C931FA1F7EB0077C94B /* Coerce.swift */,
+				C8D36C951FA1F8FB0077C94B /* IORef.swift */,
+				C8D36C991FA1F9BE0077C94B /* ST.swift */,
+				C8D36C971FA1F9A60077C94B /* STRef.swift */,
 				C8D36C911FA1ECF90077C94B /* Stream.swift */,
 				C808E6601FA1194500ECE8C8 /* List */,
 				C808E6591FA0DF7C00ECE8C8 /* Either.swift */,
@@ -450,6 +462,7 @@
 				C808E5F11FA09CE400ECE8C8 /* ViewController.swift in Sources */,
 				C808E6351FA09F8800ECE8C8 /* Maybe.swift in Sources */,
 				C808E6401FA0DDA700ECE8C8 /* Member.swift in Sources */,
+				C8D36C981FA1F9A60077C94B /* STRef.swift in Sources */,
 				C8D36C921FA1ECFA0077C94B /* Stream.swift in Sources */,
 				C808E6211FA09D3A00ECE8C8 /* Operators.swift in Sources */,
 				C808E63A1FA0CDC600ECE8C8 /* Const.swift in Sources */,
@@ -460,7 +473,9 @@
 				C808E6571FA0DF3400ECE8C8 /* Lower.swift in Sources */,
 				C808E6561FA0DF3400ECE8C8 /* Lift.swift in Sources */,
 				C808E64C1FA0DEED00ECE8C8 /* Comonad.swift in Sources */,
+				C8D36C9A1FA1F9BE0077C94B /* ST.swift in Sources */,
 				C808E65A1FA0DF7C00ECE8C8 /* Function.swift in Sources */,
+				C8D36C941FA1F7EB0077C94B /* Coerce.swift in Sources */,
 				C808E65B1FA0DF7C00ECE8C8 /* Either.swift in Sources */,
 				C808E64D1FA0DEED00ECE8C8 /* ComonadApply.swift in Sources */,
 				C808E66C1FA1AF9600ECE8C8 /* Transformations.swift in Sources */,
@@ -473,6 +488,7 @@
 				C808E6681FA19D8000ECE8C8 /* Sublists.swift in Sources */,
 				C808E6201FA09D3A00ECE8C8 /* Kinds.swift in Sources */,
 				C808E62E1FA09EB900ECE8C8 /* Functor.swift in Sources */,
+				C8D36C961FA1F8FB0077C94B /* IORef.swift in Sources */,
 				C808E6241FA09E3700ECE8C8 /* Applicative.swift in Sources */,
 				C808E6451FA0DE4B00ECE8C8 /* MonadFix.swift in Sources */,
 				C808E6641FA11B6800ECE8C8 /* List.swift in Sources */,
