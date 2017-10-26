@@ -171,7 +171,7 @@ public func tail<A>(l : List<A>) -> List<A> {
 	}
 }
 
-public func cons<T>(x : T) -> (List<T>) -> List<T> {
+public func cons<T>(_ x : T) -> (List<T>) -> List<T> {
 	return { xs in x <| xs }
 }
 
@@ -179,11 +179,11 @@ public func <| <T>(head : T, tail : List<T>) -> List<T> {
 	return List(head, tail)
 }
 
-public func snoc<T>(xs : List<T>) -> (T) -> List<T> {
+public func snoc<T>(_ xs : List<T>) -> (T) -> List<T> {
 	return { x in xs |> x }
 }
 
-public func |> <T>(xs : List<T>, x : T) -> List<T> {
+public func |> <T>(_ xs : List<T>, x : T) -> List<T> {
 	return xs + List(x)
 }
 
