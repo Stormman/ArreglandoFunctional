@@ -31,22 +31,22 @@ public struct Either<L, R>  {
 	}
 
 	/// Constructs an Either with a value on the left.
-	public static func left(x : L) -> Either<L, R> {
+	public static func left(_ x : L) -> Either<L, R> {
 		return Either(left: x)
 	}
 	
 	/// Constructs an Either with a value on the right.
-	public static func right(x : R) -> Either<L, R> {
+	public static func right(_ x : R) -> Either<L, R> {
 		return Either(right: x)
 	}
 	
 	/// Constructs an Either with a value on the left by unwrapping the boxed value.
-	public static func left(x : Box<L>) -> Either<L, R> {
+	public static func left(_ x : Box<L>) -> Either<L, R> {
 		return Either(left: x.unBox())
 	}
 	
 	/// Constructs an Either with a value on the right by unwrapping the boxed value.
-	public static func right(x : Box<R>) -> Either<L, R> {
+	public static func right(_ x : Box<R>) -> Either<L, R> {
 		return Either(right: x.unBox())
 	}
 	
@@ -65,8 +65,8 @@ public struct Either<L, R>  {
 
 /// Case analysis.  If the Either is Left, applies the left function to that value.  Else, if the 
 /// either is right, applies the right function to that value.
-/*
-public func either<A, B, C>(left : @escaping (A) -> C) -> ((B) -> C) -> (Either<A, B>) -> C {
+
+public func either<A, B, C>(left : @escaping (A) -> C) -> ( @escaping (B) -> C) -> (Either<A, B>) -> C {
 	return { right in { e in
 		switch e.match() {
 			case .Left(let x):
@@ -150,7 +150,7 @@ extension Either : Functor__ {
     public  typealias B = Any
 	typealias FB = Either<L, B>
 
-    public static func fmap<C>(f : @escaping (R) -> C) -> (Either<L, R>) -> Either<L, C> {
+    public static func fmap<C>(_ f : @escaping (R) -> C) -> (Either<L, R>) -> Either<L, C> {
 		return { 
 			switch $0.match() {
 				case .Left(let b):
@@ -163,7 +163,7 @@ extension Either : Functor__ {
 
 }
 
-public func <%> <A, B, C>(f : (B) -> C, either : Either<A, B>) -> Either<A, C> {
+public func <%> <A, B, C>(f : @escaping (B) -> C, either : Either<A, B>) -> Either<A, C> {
 	return Either.fmap(f)(either)
 }
 
@@ -177,10 +177,10 @@ extension Either : Pointed {
 	}
 }
 
-extension Either : Applicative {
-	typealias FAB = Either<L, R -> C>
+extension Either : Applicative__ {
+	typealias FAB = Either<L, (R) -> C>
 	
-	public static func ap<C>(f : Either<L, R -> C>) -> Either<L, R> -> Either<L, C> {
+	public static func ap<C>(_ f :  Either<L, (R) -> C>) -> (Either<L, R>) -> Either<L, C> {
 		return { e in 
 			switch f.match() {
 				case .Left(let e):
@@ -192,7 +192,7 @@ extension Either : Applicative {
 	}
 }
 
-public func <*> <A, B, C>(f : Either<A, B -> C> , r : Either<A, B>) ->  Either<A, C> {
+public func <*> <A, B, C>(f : Either<A, (B) -> C> , r : Either<A, B>) ->  Either<A, C> {
 	return Either<A, B>.ap(f)(r)
 }
 
@@ -204,27 +204,27 @@ public func <* <A, B, C>(a : Either<A, B>, b : Either<A, C>) -> Either<A, B> {
 	return const <%> a <*> b
 }
 
-extension Either : ApplicativeOps {
-	typealias C = Any
-	typealias FC = Either<L, C>
-	typealias D = Any
-	typealias FD = Either<L, D>
+extension Either : ApplicativeOps__ {
+	public typealias C = Any
+	public typealias FC = Either<L, C>
+	public typealias D = Any
+	public typealias FD = Either<L, D>
 
-	public static func liftA<B>(f : A -> B) -> Either<L, A> -> Either<L, B> {
-		return { a in Either<L, A -> B>.pure(f) <*> a }
+	public static func liftA<B>(_ f : @escaping(A) -> B) -> (Either<L, A>) -> Either<L, B> {
+		return { a in Either<L, (A) -> B>.pure(f) <*> a }
 	}
 
-	public static func liftA2<B, C>(f : A -> B -> C) -> Either<L, A> -> Either<L, B> -> Either<L, C> {
+	public static func liftA2<B, C>(_ f : @escaping (A) -> (B) -> C) -> (Either<L, A>) -> (Either<L, B>) -> Either<L, C> {
 		return { a in { b in f <%> a <*> b  } }
 	}
 
-	public static func liftA3<B, C, D>(f : A -> B -> C -> D) -> Either<L, A> -> Either<L, B> -> Either<L, C> -> Either<L, D> {
+	public static func liftA3<B, C, D>(_ f :@escaping  (A) -> (B) -> (C) -> D) -> (Either<L, A>) -> (Either<L, B>) -> (Either<L, C>) -> Either<L, D> {
 		return { a in { b in { c in f <%> a <*> b <*> c } } }
 	}
 }
 
-extension Either : Monad {
-	public func bind<B>(f : A -> Either<L, B>) -> Either<L, B> {
+extension Either : Monad__ {
+	public func bind<B>(_ f : (A) -> (Either<L, B>)) -> Either<L, B> {
 		switch self.match() {
 			case .Left(let l):
 				return Either<L, B>.left(l)
@@ -234,7 +234,7 @@ extension Either : Monad {
 	}
 }
 
-public func >>- <L, A, B>(xs : Either<L, A>, f : A -> Either<L, B>) -> Either<L, B> {
+public func >>- <L, A, B>(xs : Either<L, A>, f :( A) -> (Either<L, B>)) -> Either<L, B> {
 	return xs.bind(f)
 }
 
@@ -244,50 +244,50 @@ public func >> <A, B, C>(x : Either<A, B>, y : Either<A, C>) -> Either<A, C> {
 	}
 }
 
-extension Either : MonadOps {
+extension Either : MonadOps__  {
 	typealias MLA = Either<L, [A]>
 	typealias MLB = Either<L, [B]>
 	typealias MU = Either<L, ()>
 
-	public static func mapM<B>(f : A -> Either<L, B>) -> [A] -> Either<L, [B]> {
+	public static func mapM<B>(_ f : @escaping (A) -> Either<L, B>) -> ([A]) -> Either<L, [B]> {
 		return { xs in Either<L, B>.sequence(map(f)(xs)) }
 	}
 
-	public static func mapM_<B>(f : A -> Either<L, B>) -> [A] -> Either<L, ()> {
+	public static func mapM_<B>(_ f : @escaping (A) -> Either<L, B>) -> ([A]) -> Either<L, ()> {
 		return { xs in Either<L, B>.sequence_(map(f)(xs)) }
 	}
 
-	public static func forM<B>(xs : [A]) -> (A -> Either<L, B>) -> Either<L, [B]> {
+	public static func forM<B>(_ xs : [A]) -> (@escaping (A) -> Either<L, B>) -> Either<L, [B]> {
 		return flip(Either.mapM)(xs)
 	}
 
-	public static func forM_<B>(xs : [A]) -> (A -> Either<L, B>) -> Either<L, ()> {
+	public static func forM_<B>(_ xs : [A]) -> (@escaping (A) -> Either<L, B>) -> Either<L, ()> {
 		return flip(Either.mapM_)(xs)
 	}
 
-	public static func sequence(ls : [Either<L, A>]) -> Either<L, [A]> {
+	public static func sequence(_ ls : [Either<L, A>]) -> Either<L, [A]> {
 		return foldr({ m, m2 in m >>- { x in m2 >>- { xs in Either<L, [A]>.pure(cons(x)(xs)) } } })(Either<L, [A]>.pure([]))(ls)
 	}
 
-	public static func sequence_(ls : [Either<L, A>]) -> Either<L, ()> {
+	public static func sequence_(_ ls : [Either<L, A>]) -> Either<L, ()> {
 		return foldr(>>)(Either<L, ()>.pure(()))(ls)
 	}
 }
 
-public func -<< <L, A, B>(f : A -> Either<L, B>, xs : Either<L, A>) -> Either<L, B> {
+public func -<< <L, A, B>(_ f : (A) -> Either<L, B>, xs : Either<L, A>) -> Either<L, B> {
 	return xs.bind(f)
 }
 
-public func >-> <L, A, B, C>(f : A -> Either<L, B>, g : B -> Either<L, C>) -> A -> Either<L, C> {
+public func >-> <L, A, B, C>(f : @escaping(A) -> Either<L, B>, g :@escaping  (B) -> Either<L, C>) -> (A) -> Either<L, C> {
 	return { x in f(x) >>- g }
 }
 
-public func <-< <L, A, B, C>(g : B -> Either<L, C>, f : A -> Either<L, B>) -> A -> Either<L, C> {
+public func <-< <L, A, B, C>(g :@escaping (B) -> Either<L, C>, f :@escaping (A) -> Either<L, B>) -> (A) -> Either<L, C> {
 	return { x in f(x) >>- g }
 }
 
-extension Either : MonadFix {
-	public static func mfix(f : R -> Either<L, R>) -> Either<L, R> {
+extension Either : MonadFix__ {
+	public static func mfix(_ f : (R) -> Either<L, R>) -> Either<L, R> {
 		func fromRight(e : Either<L, R>) -> R {
 			switch e.match() {
 				case .Right(let br):
@@ -296,7 +296,7 @@ extension Either : MonadFix {
 					return error("Cannot take fixpoint of left Either")
 			}
 		}
-		return f(fromRight(Either.mfix(f)))
+        return f(fromRight(e: Either.mfix(f)))
 	}
 }
-*/
+
