@@ -243,7 +243,7 @@ public func >> <A, B, C>(x : Either<A, B>, y : Either<A, C>) -> Either<A, C> {
 		return y
 	}
 }
-
+/*
 extension Either : MonadOps__  {
 	typealias MLA = Either<L, [A]>
 	typealias MLB = Either<L, [B]>
@@ -273,7 +273,7 @@ extension Either : MonadOps__  {
 		return foldr(>>)(Either<L, ()>.pure(()))(ls)
 	}
 }
-
+*/
 public func -<< <L, A, B>(_ f : (A) -> Either<L, B>, xs : Either<L, A>) -> Either<L, B> {
 	return xs.bind(f)
 }
